@@ -19,12 +19,24 @@ class Network
   end
 
   def doctors_by_hospital
-    @sorted = {@hospitals[0] => @hospitals[0].doctors.map do |doctor|
+    @sorted_by_hospital = {@hospitals[0] => @hospitals[0].doctors.map do |doctor|
     doctor.name
     end}
-    @sorted[@hospitals[1]] = @hospitals[1].doctors.map do |doctor|
+    @sorted_by_hospital[@hospitals[1]] = @hospitals[1].doctors.map do |doctor|
       doctor.name
-    end 
-    return @sorted
+    end
+    return @sorted_by_hospital
+  end
+
+  def doctors_by_specialty
+    @sorted_by_specialty = @hospitals.specialties.each do |specialty|
+
+    end
+  end
+
+  def average_doctors_salary
+    @hospitals.sum do |hospital|
+      hospital.total_salary / hospital.doctors.length
+    end
   end
 end
