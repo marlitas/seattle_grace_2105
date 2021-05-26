@@ -18,5 +18,13 @@ class Network
     @highest_paid
   end
 
-  
+  def doctors_by_hospital
+    @sorted = {@hospitals[0] => @hospitals[0].doctors.map do |doctor|
+    doctor.name
+    end}
+    @sorted[@hospitals[1]] = @hospitals[1].doctors.map do |doctor|
+      doctor.name
+    end 
+    return @sorted
+  end
 end
