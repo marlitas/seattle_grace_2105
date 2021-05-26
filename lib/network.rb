@@ -10,11 +10,13 @@ class Network
   end
 
   def highest_paid_doctor
-    hospitals.map do |hospital|
-      hospital.doctors
+    hospitals.each do |hospital|
+      @highest_paid = hospital.doctors.max_by do |doctor|
+        doctor.salary
+      end
     end
-    # hospital.doctors.map do |doctor|
-    #       {doctor.name => doctor.salary}
-    # end
+    @highest_paid
   end
+
+  
 end

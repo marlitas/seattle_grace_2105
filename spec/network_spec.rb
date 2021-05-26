@@ -41,6 +41,9 @@ RSpec.describe Network do
     derek = Doctor.new({name: "Derek Sheperd", specialty: "Neurosurgery", education: "University of Pennsylvania", salary: 125_000})
     grey_sloan = Hospital.new("Grey Sloan Memorial", "Larry Maxwell", [miranda, derek])
 
+    gsmn.add_hospital(seattle_grace)
+    gsmn.add_hospital(grey_sloan)
+    
     expect(gsmn.highest_paid_doctor).to eq(miranda)
   end
 
