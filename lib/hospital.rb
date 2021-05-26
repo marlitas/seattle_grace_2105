@@ -7,20 +7,20 @@ class Hospital
   end
 
   def total_salary
-    doctors.sum do |doctor|
+    @doctors.sum do |doctor|
       doctor.salary
     end
   end
 
   def lowest_paid_doctor
-    lowest_paid = doctors.min_by do |doctor|
-      doctor.salary
+    lowest_paid = @doctors.min_by do |doctor|
+      @doctor.salary
     end
     lowest_paid.name
   end
 
   def specialties
-    doctors.map do |doctor|
+    @doctors.map do |doctor|
       doctor.specialty
     end
   end
