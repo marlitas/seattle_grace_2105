@@ -62,7 +62,7 @@ RSpec.describe Network do
     expect(gsmn.doctors_by_hospital).to eq({seattle_grace => ['Meredith Grey', 'Alex Karev'], grey_sloan => ['Miranda Bailey', 'Derek Sheperd']})
   end
 
-  xit 'can sort doctors by specialty' do
+  it 'can sort doctors by specialty' do
     gsmn = Network.new("Greater Seattle Medical Network")
     meredith = Doctor.new({name: "Meredith Grey", specialty: "General Surgery", education: "Harvard University", salary: 100_000})
     alex = Doctor.new({name: "Alex Karev", specialty: "Pediatric Surgery", education: "Johns Hopkins University", salary: 90_000})
