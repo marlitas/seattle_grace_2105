@@ -29,14 +29,16 @@ class Network
   end
 
   def doctors_by_specialty
-    @sorted_by_specialty = @hospitals.specialties.each do |specialty|
-
+    @hospitals.each do |hospital|
+      hospital.doctors each do |doctor|
+        if doctor
+      end
     end
   end
 
   def average_doctors_salary
-    @hospitals.sum do |hospital|
+    (@hospitals.sum do |hospital|
       hospital.total_salary / hospital.doctors.length
-    end
+    end) / @hospitals.length
   end
 end
