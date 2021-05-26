@@ -18,6 +18,7 @@ RSpec.describe Network do
   end
 
   it 'can add hospitals' do
+    gsmn = Network.new("Greater Seattle Medical Network")
     meredith = Doctor.new({name: "Meredith Grey", specialty: "General Surgery", education: "Harvard University", salary: 100_000})
     alex = Doctor.new({name: "Alex Karev", specialty: "Pediatric Surgery", education: "Johns Hopkins University", salary: 90_000})
     seattle_grace = Hospital.new("Seattle Grace", "Richard Webber", [meredith, alex])
@@ -32,6 +33,7 @@ RSpec.describe Network do
   end
 
   it 'can find the highest paid doctor' do
+    gsmn = Network.new("Greater Seattle Medical Network")
     meredith = Doctor.new({name: "Meredith Grey", specialty: "General Surgery", education: "Harvard University", salary: 100_000})
     alex = Doctor.new({name: "Alex Karev", specialty: "Pediatric Surgery", education: "Johns Hopkins University", salary: 90_000})
     seattle_grace = Hospital.new("Seattle Grace", "Richard Webber", [meredith, alex])
@@ -43,6 +45,7 @@ RSpec.describe Network do
   end
 
   it 'can sort doctors by hospital' do
+    gsmn = Network.new("Greater Seattle Medical Network")
     meredith = Doctor.new({name: "Meredith Grey", specialty: "General Surgery", education: "Harvard University", salary: 100_000})
     alex = Doctor.new({name: "Alex Karev", specialty: "Pediatric Surgery", education: "Johns Hopkins University", salary: 90_000})
     seattle_grace = Hospital.new("Seattle Grace", "Richard Webber", [meredith, alex])
